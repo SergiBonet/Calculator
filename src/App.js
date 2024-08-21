@@ -135,8 +135,15 @@ const ButtonEquals = ({onClick })=>{
   )
 }
 const evaluate = (formula) => {
-  return eval(formula);
+  try {
+    const func = new Function('return ' + formula);
+    return func();
+  } catch (error) {
+    console.error("Error al evaluar la fórmula:", error);
+    return "Error";
+  }
 };
+
 
 const App = () => {
   const [formula, setFormula] = useState("");
