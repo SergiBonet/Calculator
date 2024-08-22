@@ -13,7 +13,9 @@
     "postcss": ">=8.4.31"
   },
   "homepage": "https://sergibonet.github.io/calculator/",
-
+  "resolutions": {
+    "postcss": "^8.4.31"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
